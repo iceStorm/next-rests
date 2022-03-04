@@ -3,6 +3,8 @@ import { useNProgress } from "@tanem/react-nprogress"
 export default function Loading({ isRouteChanging }: {isRouteChanging?: boolean}) {
     const { animationDuration, isFinished, progress } = useNProgress({
         isAnimating: isRouteChanging,
+        // incrementDuration: 1000,
+        // animationDuration: 1000,
     })
 
     return (

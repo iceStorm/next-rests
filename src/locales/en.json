@@ -10,6 +10,29 @@
         "en": "English",
         "vi": "Vietnamese"
     },
+    "color_modes": {
+        "dark": "Dark",
+        "light": "Light",
+        "system": "System"
+    },
+
+    "pages": {
+        "title_keys": {
+            "/": "Home page",
+
+            "/login": "Login",
+            "/register": "Signup",
+            "/forgot_password": "Forgot password",
+
+            "/profile": "Profile",
+            "/posts": "Posts",
+
+            "/401": "Unauthorized",
+            "/403": "Forbidden",
+            "/404": "Page not found"
+        }
+    },
+
     "errors": {
         "unknown": "Unexpected error occurred",
         "http": {
@@ -25,22 +48,6 @@
             "email_invalid": "Email format invalid",
             "email_wrong": "Email incorrect",
             "password_wrong": "Password incorrect"
-        }
-    },
-    "pages": {
-        "title_keys": {
-            "/": "Home page",
-
-            "login": "Login",
-            "register": "Signup",
-            "forgot_password": "Forgot password",
-
-            "profile": "Profile",
-            "posts": "Posts",
-
-            "401": "Unauthorized",
-            "403": "Forbidden",
-            "404": "Page not found"
         }
     }
 }

@@ -3,8 +3,13 @@ module.exports = {
     corePlugins: {
         preflight: false,
     },
+    darkMode: 'class',
     theme: {
-        extend: {},
+        extend: {
+            colors: {
+                'dark-bg': '#10172A'
+            },
+        },
     },
     plugins: [],
 }

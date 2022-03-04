@@ -10,6 +10,12 @@
         "en": "Tiếng Anh",
         "vi": "Tiếng Việt"
     },
+    "color_modes": {
+        "dark": "Tối",
+        "light": "Sáng",
+        "system": "Hệ thống"
+    },
+
     "errors": {
         "unknown": "Lỗi không xác định",
         "http": {
@@ -31,16 +37,16 @@
         "title_keys": {
             "/": "Trang chủ",
 
-            "login": "Đăng nhập",
-            "register": "Đăng ký",
-            "forgot_password": "Đặt lại mật khẩu",
+            "/login": "Đăng nhập",
+            "/register": "Đăng ký",
+            "/forgot_password": "Đặt lại mật khẩu",
 
-            "profile": "Hồ sơ",
-            "posts": "Bài đăng",
+            "/profile": "Hồ sơ",
+            "/posts": "Bài đăng",
 
-            "401": "Yêu cầu đăng nhập",
-            "403": "Nội dung hạn chế",
-            "404": "Không tồn tại"
+            "/401": "Yêu cầu đăng nhập",
+            "/403": "Nội dung hạn chế",
+            "/404": "Không tồn tại"
         }
     }
 }

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useMemo, useState } from "react"
 import { useRouter } from "next/router"
 import type { AppProps } from "next/app"
 
@@ -17,11 +17,14 @@ function MyApp({ Component, pageProps }: AppProps) {
         isRouteChanging: false,
         locationKey: 0,
     })
+
     const router = useRouter()
     const { t, i18n } = useTranslation()
     const auth = useAuth()
 
     useEffect(() => {
+        i18n.changeLanguage(router.locale)
+
         const handleRouteChangeStart = () => {
             setState((prev) => ({
                 ...prev,
@@ -36,7 +39,8 @@ function MyApp({ Component, pageProps }: AppProps) {
                 isRouteChanging: false,
             }))
 
-            console.log("page loaded")
+            console.log("locale:", i18n.language)
+            // console.log("page loaded")
             // console.log(router.pathname)
         }
 
@@ -49,19 +53,28 @@ function MyApp({ Component, pageProps }: AppProps) {
             router.events.off("routeChangeComplete", handleRouteChangeEnd)
             router.events.off("routeChangeError", handleRouteChangeEnd)
         }
-    }, [i18n, router.events])
+    }, [i18n, router.events, router.locale])
 
+    // getting current page title
+    const pageTitle = useMemo(() => {
+        return `${i18n.t(`pages:title_keys.${router.pathname}`)} - ${
+            process.env.NEXT_PUBLIC_APP_NAME
+        }`
+    }, [i18n, router.pathname])
+
+    console.log("render...")
     return (
         <>
+            {/* Global head info for the entire app, can be overridden by individual pages */}
             <Head>
-                <title>
-                    {i18n.t(`pages:title_keys.${router.pathname}`) +
-                        process.env.APP_NAME}
-                </title>
+                <title>{pageTitle}</title>
+                <link rel="icon" href="/icon.png" />
             </Head>
 
+            {/* Loading bar */}
             <Loading isRouteChanging={state.isRouteChanging} />
 
+            {/* Role-based layout */}
             {auth ? (
                 <LayoutUser>
                     <Component {...pageProps} />
