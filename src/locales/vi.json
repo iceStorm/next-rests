@@ -1,0 +1,46 @@
+{
+    "app": {
+        "name": "React Rests Base"
+    },
+    "roles": {
+        "user": "Người dùng",
+        "admin": "Quản trị viên"
+    },
+    "languages": {
+        "en": "Tiếng Anh",
+        "vi": "Tiếng Việt"
+    },
+    "errors": {
+        "unknown": "Lỗi không xác định",
+        "http": {
+            "401": "Unauthorized",
+            "403": "Forbidden",
+            "404": "Not Found",
+            "405": "Method Not Allowed",
+            "500": "Internal Server Error",
+            "501": "Not Implemented",
+            "503": "Service unavailable"
+        },
+        "api": {
+            "email_invalid": "Định dạng email không hợp lệ",
+            "email_wrong": "Email không tồn tại trong hệ thống",
+            "password_wrong": "Mật khẩu không chính xác"
+        }
+    },
+    "pages": {
+        "title_keys": {
+            "/": "Trang chủ",
+
+            "login": "Đăng nhập",
+            "register": "Đăng ký",
+            "forgot_password": "Đặt lại mật khẩu",
+
+            "profile": "Hồ sơ",
+            "posts": "Bài đăng",
+
+            "401": "Yêu cầu đăng nhập",
+            "403": "Nội dung hạn chế",
+            "404": "Không tồn tại"
+        }
+    }
+}

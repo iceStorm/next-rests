@@ -1,0 +1,46 @@
+{
+    "app": {
+        "name": "React Rests Base"
+    },
+    "roles": {
+        "user": "User",
+        "admin": "Admin"
+    },
+    "languages": {
+        "en": "English",
+        "vi": "Vietnamese"
+    },
+    "errors": {
+        "unknown": "Unexpected error occurred",
+        "http": {
+            "401": "Unauthorized",
+            "403": "Forbidden",
+            "404": "Not Found",
+            "405": "Method Not Allowed",
+            "500": "Internal Server Error",
+            "501": "Not Implemented",
+            "503": "Service unavailable"
+        },
+        "api": {
+            "email_invalid": "Email format invalid",
+            "email_wrong": "Email incorrect",
+            "password_wrong": "Password incorrect"
+        }
+    },
+    "pages": {
+        "title_keys": {
+            "/": "Home page",
+
+            "login": "Login",
+            "register": "Signup",
+            "forgot_password": "Forgot password",
+
+            "profile": "Profile",
+            "posts": "Posts",
+
+            "401": "Unauthorized",
+            "403": "Forbidden",
+            "404": "Page not found"
+        }
+    }
+}
