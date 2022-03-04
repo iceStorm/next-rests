@@ -1,16 +1,17 @@
 import { useEffect, useMemo, useState } from "react"
 import { useRouter } from "next/router"
 import type { AppProps } from "next/app"
-
 import Head from "next/head"
-import { useTranslation } from "react-i18next"
 
-import "src/locales"
-import "src/styles/globals.css"
+import { useTranslation } from "react-i18next"
+import Loading from "src/components/TheLoadingBar"
+
 import useAuth from "src/hooks/useAuth"
 import LayoutUser from "src/layouts/LayoutUser"
 import LayoutGuest from "src/layouts/LayoutGuest"
-import Loading from "src/components/TheLoadingBar"
+
+import "src/locales"
+import "src/styles/globals.css"
 
 function MyApp({ Component, pageProps }: AppProps) {
     const [state, setState] = useState({
@@ -19,11 +20,12 @@ function MyApp({ Component, pageProps }: AppProps) {
     })
 
     const router = useRouter()
-    const { t, i18n } = useTranslation()
+    const { i18n } = useTranslation()
     const auth = useAuth()
 
     useEffect(() => {
         i18n.changeLanguage(router.locale)
+        console.log("locale:", i18n.language)
 
         const handleRouteChangeStart = () => {
             setState((prev) => ({
@@ -39,7 +41,6 @@ function MyApp({ Component, pageProps }: AppProps) {
                 isRouteChanging: false,
             }))
 
-            console.log("locale:", i18n.language)
             // console.log("page loaded")
             // console.log(router.pathname)
         }
@@ -55,14 +56,14 @@ function MyApp({ Component, pageProps }: AppProps) {
         }
     }, [i18n, router.events, router.locale])
 
-    // getting current page title
+    // getting current page i18n-title
     const pageTitle = useMemo(() => {
         return `${i18n.t(`pages:title_keys.${router.pathname}`)} - ${
             process.env.NEXT_PUBLIC_APP_NAME
         }`
     }, [i18n, router.pathname])
 
-    console.log("render...")
+    console.log("app render...")
     return (
         <>
             {/* Global head info for the entire app, can be overridden by individual pages */}

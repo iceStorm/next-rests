@@ -10,7 +10,7 @@ import TheLanguageSwitcher from "src/components/TheLanguageSwitcher"
 export default function LayoutGuestHeader() {
     return (
         <>
-            <header className="py-3 sticky top-0 z-40 w-full transition-colors duration-500 lg:z-50 border-b border-gray-200 dark:border-gray-200/20 bg-white/95 dark:bg-slate-800">
+            <header className="py-3 sticky top-0 w-full transition-colors duration-500 border-b border-gray-200 dark:border-gray-200/20 bg-white/95 dark:bg-slate-800">
                 <div className={clsx(styles.container, "flex items-center justify-between")}>
                     {/* left side */}
                     <a href="/" className="flex items-center gap-2">
