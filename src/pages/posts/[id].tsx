@@ -5,7 +5,7 @@ export default function PostDetailPage() {
 
     return (
         <>
-            <div>{ query.isReady }</div>
+            <article>{ query.isReady }</article>
         </>
     );
 }

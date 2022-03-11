@@ -1,21 +1,11 @@
-import { useEffect, useMemo, useState } from "react"
 import { useRouter } from "next/router"
-import type { AppProps } from "next/app"
-import Head from "next/head"
-
+import { useEffect, useState } from "react"
 import { useTranslation } from "react-i18next"
-
-import "src/locales" // i18n init
-import "src/styles/globals.css" // load global styles
-
-import Loading from "src/components/TheLoadingBar"
-import TheRouterGuard from "src/components/TheRouterGuard"
-
 import useAuth from "src/hooks/useAuth"
-import LayoutUser from "src/layouts/LayoutUser"
 import LayoutGuest from "src/layouts/LayoutGuest"
+import LayoutUser from "src/layouts/LayoutUser"
 
-function MyApp({ Component, pageProps }: AppProps) {
+export default function TheRouterGuard(props: any) {
     const [state, setState] = useState({
         isRouteChanging: false,
         locationKey: 0,
@@ -26,7 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     const auth = useAuth()
 
     useEffect(() => {
-        i18n.changeLanguage(router.locale)
+        // i18n.changeLanguage(router.locale)
         console.log("locale:", i18n.language)
 
         const handleRouteChangeStart = () => {
@@ -42,9 +32,13 @@ function MyApp({ Component, pageProps }: AppProps) {
                 ...prev,
                 isRouteChanging: false,
             }))
+
+            i18n.changeLanguage(router.locale)
+
+            // console.log("page loaded")
+            // console.log(router.pathname)
         }
 
-        // register router events
         router.events.on("routeChangeStart", handleRouteChangeStart)
         router.events.on("routeChangeComplete", handleRouteChangeEnd)
         router.events.on("routeChangeError", handleRouteChangeEnd)
@@ -56,37 +50,13 @@ function MyApp({ Component, pageProps }: AppProps) {
         }
     }, [i18n, router.events, router.locale])
 
-    // getting current page i18n-title
-    const pageTitle = useMemo(() => {
-        return `${i18n.t(`pages:title_keys.${router.pathname}`)} - ${
-            process.env.NEXT_PUBLIC_APP_NAME
-        }`
-    }, [i18n, i18n.language, router.pathname])
-
-    console.log("app render...")
     return (
         <>
-            {/* Global head info for the entire app, can be overridden by individual pages */}
-            <Head>
-                <title>{pageTitle}</title>
-                <link rel="icon" href="/icon.png" />
-            </Head>
-
-            {/* Loading bar */}
-            <Loading isRouteChanging={state.isRouteChanging} />
-
-            {/* Role-based layout */}
             {auth ? (
-                <LayoutUser>
-                    <Component {...pageProps} />
-                </LayoutUser>
+                <LayoutUser>{props.children}</LayoutUser>
             ) : (
-                <LayoutGuest>
-                    <Component {...pageProps} />
-                </LayoutGuest>
+                <LayoutGuest>{props.children}</LayoutGuest>
             )}
         </>
     )
 }
-
-export default MyApp

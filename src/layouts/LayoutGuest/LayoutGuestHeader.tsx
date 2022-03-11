@@ -4,19 +4,19 @@ import Link from "next/link"
 import Image from "next/image"
 
 import styles from "./LayoutGuest.module.css"
-import TheLColorModeSwitcher from "src/components/TheColorModeSwitcher"
+import TheColorModeSwitcher from "src/components/TheColorModeSwitcher"
 import TheLanguageSwitcher from "src/components/TheLanguageSwitcher"
 
 export default function LayoutGuestHeader() {
     return (
         <>
-            <header className="py-3 sticky top-0 w-full transition-colors duration-500 border-b border-gray-200 dark:border-gray-200/20 bg-white/95 dark:bg-slate-800">
+            <header className="py-3 sticky top-0 z-10 w-full border-b border-gray-200 dark:border-gray-200/20 bg-white/75 backdrop-blur-md dark:bg-slate-800">
                 <div className={clsx(styles.container, "flex items-center justify-between")}>
                     {/* left side */}
                     <a href="/" className="flex items-center gap-2">
                         <Image
                             src="/favicon.ico"
-                            alt=""
+                            alt="logo"
                             width="40px"
                             height="40px"
                         />
@@ -26,8 +26,8 @@ export default function LayoutGuestHeader() {
                     </a>
 
                     {/* right side */}
-                    <div>
-                        <TheLColorModeSwitcher />
+                    <div className="flex items-center gap-2">
+                        <TheColorModeSwitcher />
                         <TheLanguageSwitcher />
                     </div>
                 </div>
