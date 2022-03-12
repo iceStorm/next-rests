@@ -16,6 +16,14 @@
         "system": "Hệ thống"
     },
 
+    "common": {
+        "auth": {
+            "login": "Đăng nhập",
+            "signup": "Đăng ký",
+            "password": "Mật khẩu"
+        }
+    },
+
     "errors": {
         "unknown": "Lỗi không xác định",
         "http": {

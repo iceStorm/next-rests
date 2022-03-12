@@ -16,12 +16,20 @@
         "system": "System"
     },
 
+    "common": {
+        "auth": {
+            "login": "Login",
+            "signup": "Signup",
+            "password": "Password"
+        }
+    },
+
     "pages": {
         "title_keys": {
             "/": "Home page",
 
             "/login": "Login",
-            "/register": "Signup",
+            "/register": "Register",
             "/forgot_password": "Forgot password",
 
             "/profile": "Profile",

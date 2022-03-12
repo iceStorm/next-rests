@@ -3,41 +3,50 @@ import Head from "next/head"
 import Link from "next/link"
 import { useTranslation } from "react-i18next"
 
-export default function LoginPage() {
+export default function SignupPage() {
     const { t } = useTranslation()
 
     return (
         <>
             <div className="mt-10 mb-5">
-                <p className="mb-2 font-bold text-3xl">Login page.</p>
+                <p className="mb-2 font-bold text-3xl">Register page.</p>
                 <p>
                     Don&lsquo;t have an account?{" "}
                     <Link href="/signup" passHref>
                         <span className="link">Create new account</span>
-                    </Link>.
+                    </Link>
+                    .
                 </p>
             </div>
 
             <form className="flex flex-col max-w-md">
                 <div className="mt-5">
-                    <label htmlFor="email">Email</label>
+                    <label htmlFor="username">Username</label>
                     <input
-                        id="email"
-                        className="mt-2 border-2 border-gray-200 w-full pl-3"
+                        id="username"
+                        className="mt-2 border border-gray-200 w-full shadow-md pl-3"
                     />
                 </div>
 
                 <div className="mt-5">
-                    <label htmlFor="password">{t("common:auth.password")}</label>
+                    <label htmlFor="email">Email</label>
+                    <input
+                        id="email"
+                        className="mt-2 border border-gray-200 w-full shadow-md pl-3"
+                    />
+                </div>
+
+                <div className="mt-5">
+                    <label htmlFor="password">Password</label>
                     <input
                         id="password"
                         type="password"
-                        className="mt-2 border-2 border-gray-200 w-full pl-3"
+                        className="mt-2 border border-gray-200 w-full shadow-md pl-3"
                     />
                 </div>
 
                 <button className="btn rounded mt-10 bg-primary py-3 text-white font-semibold">
-                    {t("common:auth.login")}
+                    {t("common:auth.signup")}
                 </button>
             </form>
         </>

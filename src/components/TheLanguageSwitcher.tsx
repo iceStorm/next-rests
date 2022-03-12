@@ -1,3 +1,4 @@
+import { TranslateIcon } from "@heroicons/react/solid"
 import { useState } from "react"
 import { useTranslation } from "react-i18next"
 
@@ -22,7 +23,8 @@ export default function TheLanguageSwitcher() {
         <>
             <ul>
                 <li className="rounded-full px-5">
-                    {i18n.t(`languages:${i18n.language}`)}
+                    {/* {i18n.t(`languages:${i18n.language}`)} */}
+                    <TranslateIcon className="w-5 h-5" />
                 </li>
             </ul>
         </>

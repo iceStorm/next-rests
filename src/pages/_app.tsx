@@ -4,16 +4,16 @@ import type { AppProps } from "next/app"
 import Head from "next/head"
 
 import { useTranslation } from "react-i18next"
+import { Provider } from "react-redux"
 
 import "src/locales" // i18n init
 import "src/styles/globals.css" // load global styles
 
 import Loading from "src/components/TheLoadingBar"
-import TheRouterGuard from "src/components/TheRouterGuard"
-
-import useAuth from "src/hooks/useAuth"
 import LayoutUser from "src/layouts/LayoutUser"
 import LayoutGuest from "src/layouts/LayoutGuest"
+import { store, wrapper } from "src/store"
+import useAuth from "src/hooks/useAuth"
 
 function MyApp({ Component, pageProps }: AppProps) {
     const [state, setState] = useState({
@@ -27,7 +27,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
     useEffect(() => {
         i18n.changeLanguage(router.locale)
-        console.log("locale:", i18n.language)
+        // console.log("locale:", i18n.language)
 
         const handleRouteChangeStart = () => {
             setState((prev) => ({
@@ -65,7 +65,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
     console.log("app render...")
     return (
-        <>
+        <Provider store={store}>
             {/* Global head info for the entire app, can be overridden by individual pages */}
             <Head>
                 <title>{pageTitle}</title>
@@ -85,8 +85,9 @@ function MyApp({ Component, pageProps }: AppProps) {
                     <Component {...pageProps} />
                 </LayoutGuest>
             )}
-        </>
+        </Provider>
     )
 }
 
-export default MyApp
+//makeStore function that returns a new store for every request
+export default wrapper.withRedux(MyApp)

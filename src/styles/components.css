@@ -5,7 +5,17 @@
         @apply bg-opacity-100 cursor-pointer;
 
         &:hover {
-            @apply bg-opacity-50;
+            @apply bg-opacity-75;
         }
+    }
+
+    .link {
+        @apply text-primary hover:underline cursor-pointer;
+    }
+
+    input {
+        @apply hover:ring-2 hover:ring-primary;
+        @apply focus:ring-4 focus:ring-primary;
+        @apply rounded py-2 px-2;
     }
 }
