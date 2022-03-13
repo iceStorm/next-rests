@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react"
 import { useRouter } from "next/router"
 import type { AppProps } from "next/app"
 import Head from "next/head"
+import Script from "next/script"
 
 import { useTranslation } from "react-i18next"
 import { Provider } from "react-redux"
@@ -14,7 +15,6 @@ import LayoutUser from "src/layouts/LayoutUser"
 import LayoutGuest from "src/layouts/LayoutGuest"
 import { store, wrapper } from "src/store"
 import useAuth from "src/hooks/useAuth"
-import Script from "next/script"
 
 function MyApp({ Component, pageProps }: AppProps) {
     const [state, setState] = useState({
@@ -59,38 +59,24 @@ function MyApp({ Component, pageProps }: AppProps) {
 
     // getting current page i18n-title
     const pageTitle = useMemo(() => {
-        return `${i18n.t(`pages:title_keys.${router.pathname}`)} - ${
+        return `${i18n.t(`pages:titles.${router.pathname}`)} - ${
             process.env.NEXT_PUBLIC_APP_NAME
         }`
+    }, [i18n, i18n.language, router.pathname])
+
+    // getting current page i18n-title
+    const pageDescription = useMemo(() => {
+        return i18n.t(`pages:descriptions.${router.pathname}`)
     }, [i18n, i18n.language, router.pathname])
 
     console.log("app render...")
     return (
         <>
-            {/* <Script id="show-banner" strategy="lazyOnload">
-                {`  // On page load or when changing themes, best to add inline in 'head' to avoid FOUC
-                    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                        document.documentElement.classList.add('dark');
-                    } else {
-                        document.documentElement.classList.remove('dark')
-                    }`}
-            </Script> */}
-            {/* <Script
-                id="show-banner"
-                strategy="beforeInteractive"
-                dangerouslySetInnerHTML={{
-                    __html: `if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                        document.documentElement.classList.add('dark');
-                    } else {
-                        document.documentElement.classList.remove('dark')
-                    }`,
-                }}
-            /> */}
-
             <Provider store={store}>
                 {/* Global head info for the entire app, can be overridden by individual pages */}
                 <Head>
                     <title>{pageTitle}</title>
+                    <meta name="description" content={pageDescription}></meta>
                     <link rel="icon" href="/icon.png" />
                 </Head>
 

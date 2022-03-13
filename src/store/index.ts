@@ -6,38 +6,36 @@ import {
     ThunkAction,
 } from "@reduxjs/toolkit"
 import { createWrapper, HYDRATE } from "next-redux-wrapper"
-import appSlice from "./app.slice"
+import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux"
+import appReducer from "./app.slice"
 
-const combinedReducer = combineReducers({
-    app: appSlice,
-})
+// const combinedReducer = combineReducers({
+//     app: appSlice,
+// })
 
-const reducer = (
-    state: ReturnType<typeof combinedReducer>,
-    action: AnyAction
-) => {
-    if (action.type === HYDRATE) {
-        const nextState = {
-            ...state, // use previous state
-            ...action.payload, // apply delta from hydration
-        }
-        return nextState
-    } else {
-        return combinedReducer(state, action)
-    }
-}
+// const reducer = (
+//     state: ReturnType<typeof combinedReducer>,
+//     action: AnyAction
+// ) => {
+//     if (action.type === HYDRATE) {
+//         const nextState = {
+//             ...state, // use previous state
+//             ...action.payload, // apply delta from hydration
+//         }
+//         return nextState
+//     } else {
+//         return combinedReducer(state, action)
+//     }
+// }
 
 export const store = configureStore({
     reducer: {
-        reducer,
+        app: appReducer,
     },
 })
 
-const makeStore = () => store
-type Store = ReturnType<typeof makeStore>
-
-export type AppDispatch = Store["dispatch"]
-export type RootState = ReturnType<Store["getState"]>
+export type AppDispatch = typeof store.dispatch
+export type RootState = ReturnType<typeof store.getState>
 export type AppThunk<ReturnType = void> = ThunkAction<
     ReturnType,
     RootState,
@@ -45,4 +43,9 @@ export type AppThunk<ReturnType = void> = ThunkAction<
     Action<string>
 >
 
+// hooks
+export const useAppDispatch = () => useDispatch<AppDispatch>()
+export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector
+
+const makeStore = () => store
 export const wrapper = createWrapper(makeStore, { debug: true })

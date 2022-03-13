@@ -20,24 +20,8 @@
         "auth": {
             "login": "Login",
             "signup": "Signup",
-            "password": "Password"
-        }
-    },
-
-    "pages": {
-        "title_keys": {
-            "/": "Home page",
-
-            "/login": "Login",
-            "/register": "Register",
-            "/forgot_password": "Forgot password",
-
-            "/profile": "Profile",
-            "/posts": "Posts",
-
-            "/401": "Unauthorized",
-            "/403": "Forbidden",
-            "/404": "Page not found"
+            "password": "Password",
+            "forgot_password": "Forgot password"
         }
     },
 
@@ -56,6 +40,46 @@
             "email_invalid": "Email format invalid",
             "email_wrong": "Email incorrect",
             "password_wrong": "Password incorrect"
+        }
+    },
+
+    "pages": {
+        "titles": {
+            "/": "Home page",
+
+            "/login": "Login",
+            "/register": "Register",
+            "/forgot-password": "Forgot password",
+
+            "/profile": "Profile",
+            "/posts": "Posts",
+
+            "/401": "Unauthorized",
+            "/403": "Forbidden",
+            "/404": "Page not found"
+        },
+        "descriptions": {
+            "/": "NextJS Rest API Typescript boilerplate.",
+
+            "/login": "Login to the system.",
+            "/register": "Register a new account to begin using.",
+            "/forgot-password": "Forgot password? Enter your associated email to reset."
+        },
+        "labels": {
+            "/login": {
+                "headline": "Login",
+                "dont_have_account_guide": "Don't have an account?",
+                "create_new_account_guide": "Create new account"
+            },
+            "/register": {
+                "headline": "Register new account",
+                "already_have_account": "Already have an account?"
+            },
+            "/forgot-password": {
+                "headline": "Forgot password",
+                "guide": "Enter the email associated with your account below and we'll send you a link to reset your password",
+                "submit_button": "Send password recovery link"
+            }
         }
     }
 }

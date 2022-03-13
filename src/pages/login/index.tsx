@@ -9,13 +9,16 @@ export default function LoginPage() {
     return (
         <>
             <div className="mt-10 mb-5 dark:text-white">
-                <p className="mb-2 font-bold text-3xl">Login page.</p>
+                <p className="mb-2 font-bold text-3xl">
+                    {t("pages:labels./login.headline")}
+                </p>
                 <p>
-                    Don&lsquo;t have an account?{" "}
+                    {t("pages:labels./login.dont_have_account_guide")}{" "}
                     <Link href="/register" passHref>
-                        <span className="link">Create new account</span>
+                        <span className="link">
+                            {t("pages:labels./login.create_new_account_guide")}.
+                        </span>
                     </Link>
-                    .
                 </p>
             </div>
 
@@ -38,7 +41,15 @@ export default function LoginPage() {
                     />
                 </div>
 
-                <button className="btn rounded-md mt-10 bg-primary py-3 text-white font-semibold shadow-lg shadow-primary/50">
+                <div className="mt-5 flex justify-end">
+                    <Link href="/forgot-password" passHref>
+                        <span className="link">
+                            {t("common:auth.forgot_password")}?
+                        </span>
+                    </Link>
+                </div>
+
+                <button className="btn rounded-md mt-10 bg-primary bg-opacity-80 py-3 text-white font-semibold shadow-lg shadow-primary/50 dark:shadow-none">
                     {t("common:auth.login")}
                 </button>
             </form>
