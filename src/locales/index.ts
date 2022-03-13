@@ -1,8 +1,8 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 
-import en from './en.json'
-import vi from './vi.json'
+import en from './en/messages.json'
+import vi from './vi/messages.json'
 
 export const MESSAGES = {
   en, vi,

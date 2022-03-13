@@ -1,10 +1,11 @@
 /* using custom preflights at src/common/styes/preflights.css for better customization, don't fool yourself */
-/* @tailwind base; */
+@import './components';
+
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import "./preflights";
-@import './components';
+/* @import "./preflights"; */
 
 html,
 body {

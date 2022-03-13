@@ -14,6 +14,7 @@ import LayoutUser from "src/layouts/LayoutUser"
 import LayoutGuest from "src/layouts/LayoutGuest"
 import { store, wrapper } from "src/store"
 import useAuth from "src/hooks/useAuth"
+import Script from "next/script"
 
 function MyApp({ Component, pageProps }: AppProps) {
     const [state, setState] = useState({
@@ -65,27 +66,49 @@ function MyApp({ Component, pageProps }: AppProps) {
 
     console.log("app render...")
     return (
-        <Provider store={store}>
-            {/* Global head info for the entire app, can be overridden by individual pages */}
-            <Head>
-                <title>{pageTitle}</title>
-                <link rel="icon" href="/icon.png" />
-            </Head>
+        <>
+            {/* <Script id="show-banner" strategy="lazyOnload">
+                {`  // On page load or when changing themes, best to add inline in 'head' to avoid FOUC
+                    if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                        document.documentElement.classList.add('dark');
+                    } else {
+                        document.documentElement.classList.remove('dark')
+                    }`}
+            </Script> */}
+            {/* <Script
+                id="show-banner"
+                strategy="beforeInteractive"
+                dangerouslySetInnerHTML={{
+                    __html: `if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                        document.documentElement.classList.add('dark');
+                    } else {
+                        document.documentElement.classList.remove('dark')
+                    }`,
+                }}
+            /> */}
 
-            {/* Loading bar */}
-            <Loading isRouteChanging={state.isRouteChanging} />
+            <Provider store={store}>
+                {/* Global head info for the entire app, can be overridden by individual pages */}
+                <Head>
+                    <title>{pageTitle}</title>
+                    <link rel="icon" href="/icon.png" />
+                </Head>
 
-            {/* Role-based layout */}
-            {auth ? (
-                <LayoutUser>
-                    <Component {...pageProps} />
-                </LayoutUser>
-            ) : (
-                <LayoutGuest>
-                    <Component {...pageProps} />
-                </LayoutGuest>
-            )}
-        </Provider>
+                {/* Loading bar */}
+                <Loading isRouteChanging={state.isRouteChanging} />
+
+                {/* Role-based layout */}
+                {auth ? (
+                    <LayoutUser>
+                        <Component {...pageProps} />
+                    </LayoutUser>
+                ) : (
+                    <LayoutGuest>
+                        <Component {...pageProps} />
+                    </LayoutGuest>
+                )}
+            </Provider>
+        </>
     )
 }
 

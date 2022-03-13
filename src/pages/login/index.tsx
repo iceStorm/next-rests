@@ -8,35 +8,37 @@ export default function LoginPage() {
 
     return (
         <>
-            <div className="mt-10 mb-5">
+            <div className="mt-10 mb-5 dark:text-white">
                 <p className="mb-2 font-bold text-3xl">Login page.</p>
                 <p>
                     Don&lsquo;t have an account?{" "}
-                    <Link href="/signup" passHref>
+                    <Link href="/register" passHref>
                         <span className="link">Create new account</span>
-                    </Link>.
+                    </Link>
+                    .
                 </p>
             </div>
 
-            <form className="flex flex-col max-w-md">
+            <form className="flex flex-col max-w-md mb-10 dark:text-white">
                 <div className="mt-5">
-                    <label htmlFor="email">Email</label>
-                    <input
-                        id="email"
-                        className="mt-2 border-2 border-gray-200 w-full pl-3"
-                    />
+                    <label htmlFor="email" className="font-semibold">
+                        Email
+                    </label>
+                    <input id="email" className="mt-2 w-full" />
                 </div>
 
                 <div className="mt-5">
-                    <label htmlFor="password">{t("common:auth.password")}</label>
+                    <label htmlFor="password" className="font-semibold">
+                        {t("common:auth.password")}
+                    </label>
                     <input
                         id="password"
                         type="password"
-                        className="mt-2 border-2 border-gray-200 w-full pl-3"
+                        className="mt-2 w-full"
                     />
                 </div>
 
-                <button className="btn rounded mt-10 bg-primary py-3 text-white font-semibold">
+                <button className="btn rounded-md mt-10 bg-primary py-3 text-white font-semibold shadow-lg shadow-primary/50">
                     {t("common:auth.login")}
                 </button>
             </form>

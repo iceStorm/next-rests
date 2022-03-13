@@ -19,7 +19,7 @@ const Home: NextPage = () => {
             <div className="py-5 flex flex-col gap-10">
                 <section className="flex flex-col items-center">
                     <Link href="/login" passHref>
-                        <span className="py-3 px-10 rounded-full shadow-lg bg-primary text-white font-semibold btn">
+                        <span className="py-3 px-10 rounded-full bg-primary text-white font-semibold btn shadow-lg shadow-primary/25">
                             {t("pages:title_keys./login")}
                         </span>
                     </Link>
