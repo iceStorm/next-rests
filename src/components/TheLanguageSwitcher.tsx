@@ -21,10 +21,16 @@ export default function TheLanguageSwitcher() {
 
     return (
         <>
+            <button
+                type="button"
+                // onClick={() => toggleTheme()}
+                className="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring focus:ring-primary dark:focus:ring-gray-700 rounded-lg text-sm p-2.5"
+            >
+                <TranslateIcon className="w-5 h-5" />
+            </button>
             <ul>
                 <li className="rounded-full px-5">
                     {/* {i18n.t(`languages:${i18n.language}`)} */}
-                    <TranslateIcon className="w-5 h-5" />
                 </li>
             </ul>
         </>

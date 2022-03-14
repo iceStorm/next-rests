@@ -22,7 +22,7 @@
     }
 
     input {
-        @apply bg-slate-200 dark:bg-gray-800 hover:border-primary hover:border-opacity-50 focus:ring-0 focus:ring-primary rounded-md;
+        @apply bg-slate-100 dark:bg-gray-800 hover:border-primary hover:border-opacity-50 focus:ring-0 focus:ring-primary rounded-md;
         @apply focus:outline-none border-2 border-gray-200 dark:border-slate-700 focus:border-primary;
         @apply py-2 pl-3;
     }
