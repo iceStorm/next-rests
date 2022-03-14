@@ -1,4 +1,14 @@
 @layer components {
+    ::-moz-selection {
+        @apply text-black bg-primary;
+        /* background: yellow; */
+    }
+
+    ::selection {
+        @apply text-black bg-primary;
+        /* background: yellow; */
+    }
+
     .btn {
         @apply bg-opacity-100 cursor-pointer;
 
