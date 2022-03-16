@@ -14,9 +14,7 @@ export default function LayoutGuest(props: any) {
                 <LayoutGuestHeader />
 
                 <main className={clsx("flex-1 bg-white dark:bg-slate-900/75")}>
-                    <section className={clsx(styles.container)}>
-                        {props.children}
-                    </section>
+                    {props.children}
                 </main>
 
                 <LayoutGuestFooter />

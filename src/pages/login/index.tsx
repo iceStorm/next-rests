@@ -7,7 +7,7 @@ export default function LoginPage() {
     const { t } = useTranslation()
 
     return (
-        <>
+        <div className="container">
             <div className="mt-10 mb-5 dark:text-white">
                 <p className="mb-2 font-bold text-3xl">
                     {t("pages:labels./login.headline")}
@@ -27,7 +27,7 @@ export default function LoginPage() {
                     <label htmlFor="email" className="font-semibold">
                         Email
                     </label>
-                    <input id="email" className="mt-2 w-full" />
+                    <input id="email" className="mt-2 w-full" required={true} />
                 </div>
 
                 <div className="mt-5">
@@ -38,6 +38,7 @@ export default function LoginPage() {
                         id="password"
                         type="password"
                         className="mt-2 w-full"
+                        required={true}
                     />
                 </div>
 
@@ -53,7 +54,7 @@ export default function LoginPage() {
                     {t("common:auth.login")}
                 </button>
             </form>
-        </>
+        </div>
     )
 }
 

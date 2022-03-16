@@ -11,7 +11,7 @@ export default function LayoutGuestHeader() {
     return (
         <>
             <header className="py-3 sticky top-0 z-10 w-full border-b border-gray-200 dark:border-gray-200/20 bg-white/75 backdrop-blur-md dark:bg-slate-800/75">
-                <div className={clsx(styles.container, "flex items-center justify-between")}>
+                <div className={clsx("container flex items-center justify-between")}>
                     {/* left side */}
                     <a href="/" className="flex items-center gap-2">
                         <Image
@@ -20,13 +20,13 @@ export default function LayoutGuestHeader() {
                             width="40px"
                             height="40px"
                         />
-                        <span className="font-semibold">
+                        <span className="font-semibold dark:text-white">
                             {process.env.NEXT_PUBLIC_APP_NAME}
                         </span>
                     </a>
 
                     {/* right side */}
-                    <div className="flex items-center gap-2">
+                    <div className="flex justify-end items-center sm:gap-2">
                         <TheColorModeSwitcher />
                         <TheLanguageSwitcher />
                     </div>

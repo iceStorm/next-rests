@@ -7,7 +7,7 @@ export default function SignupPage() {
     const { t } = useTranslation()
 
     return (
-        <>
+        <div className="container">
             <div className="mt-10 mb-5 dark:text-white">
                 <p className="mb-2 font-bold text-3xl">{t("pages:labels./register.headline")}.</p>
                 <p>
@@ -48,7 +48,7 @@ export default function SignupPage() {
                     {t("common:auth.signup")}
                 </button>
             </form>
-        </>
+        </div>
     )
 }
 

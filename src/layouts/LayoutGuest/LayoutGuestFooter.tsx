@@ -4,7 +4,7 @@ import styles from './LayoutGuest.module.css'
 export default function LayoutGuestFooter() {
     return <>
         <footer className="border-t border-gray-200 dark:border-gray-200/20 py-3 bg-white dark:bg-slate-800">
-            <div className={clsx(styles.container)}>
+            <div className={clsx(styles.container, "px-3 container:p-0 ")}>
                 <span>Footer</span>
             </div>
         </footer>

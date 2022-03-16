@@ -28,11 +28,10 @@ export default function TheLanguageSwitcher() {
             >
                 <TranslateIcon className="w-5 h-5" />
             </button>
-            <ul>
+            {/* <ul>
                 <li className="rounded-full px-5">
-                    {/* {i18n.t(`languages:${i18n.language}`)} */}
                 </li>
-            </ul>
+            </ul> */}
         </>
     )
 }

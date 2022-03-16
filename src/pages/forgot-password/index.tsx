@@ -7,7 +7,7 @@ export default function ForgotPasswordPage() {
     const { t } = useTranslation()
 
     return (
-        <>
+        <div className="container">
             <div className="mt-10 mb-5 dark:text-white">
                 <p className="mb-2 font-bold text-3xl">{t("pages:labels./forgot-password.headline")}.</p>
                 <p>
@@ -27,7 +27,7 @@ export default function ForgotPasswordPage() {
                     {t("pages:labels./forgot-password.submit_button")}
                 </button>
             </form>
-        </>
+        </div>
     )
 }
 
