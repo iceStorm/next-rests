@@ -20,6 +20,7 @@
         "auth": {
             "login": "Login",
             "signup": "Signup",
+            "username": "Username",
             "password": "Password",
             "forgot_password": "Forgot password"
         }
@@ -69,7 +70,8 @@
             "/login": {
                 "headline": "Login",
                 "dont_have_account_guide": "Don't have an account?",
-                "create_new_account_guide": "Create new account"
+                "create_new_account_guide": "Create new account",
+                "email_or_username": "Email or Username"
             },
             "/register": {
                 "headline": "Register new account",

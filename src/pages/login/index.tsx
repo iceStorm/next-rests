@@ -25,9 +25,14 @@ export default function LoginPage() {
             <form className="flex flex-col max-w-md mb-10 dark:text-white">
                 <div className="mt-5">
                     <label htmlFor="email" className="font-semibold">
-                        Email
+                        {t("pages:labels./login.email_or_username")}
                     </label>
-                    <input id="email" className="mt-2 w-full" required={true} />
+                    <input
+                        id="email"
+                        className="mt-2 w-full"
+                        required={true}
+                        autoComplete="email"
+                    />
                 </div>
 
                 <div className="mt-5">
@@ -39,6 +44,7 @@ export default function LoginPage() {
                         type="password"
                         className="mt-2 w-full"
                         required={true}
+                        autoComplete="current-password"
                     />
                 </div>
 

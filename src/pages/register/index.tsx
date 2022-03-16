@@ -9,7 +9,9 @@ export default function SignupPage() {
     return (
         <div className="container">
             <div className="mt-10 mb-5 dark:text-white">
-                <p className="mb-2 font-bold text-3xl">{t("pages:labels./register.headline")}.</p>
+                <p className="mb-2 font-bold text-3xl">
+                    {t("pages:labels./register.headline")}.
+                </p>
                 <p>
                     {t("pages:labels./register.already_have_account")}{" "}
                     <Link href="/login" passHref>
@@ -21,7 +23,7 @@ export default function SignupPage() {
             <form className="flex flex-col max-w-md mb-10 dark:text-white">
                 <div className="mt-5">
                     <label htmlFor="username" className="font-semibold">
-                        Username
+                        {t("common:auth.username")}
                     </label>
                     <input id="username" className="mt-2 w-full" />
                 </div>
@@ -35,7 +37,7 @@ export default function SignupPage() {
 
                 <div className="mt-5">
                     <label htmlFor="password" className="font-semibold">
-                        Password
+                        {t("common:auth.password")}
                     </label>
                     <input
                         id="password"

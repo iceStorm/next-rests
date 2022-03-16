@@ -20,6 +20,7 @@
         "auth": {
             "login": "Đăng nhập",
             "signup": "Đăng ký",
+            "username": "Tên người dùng (username)",
             "password": "Mật khẩu",
             "forgot_password": "Quên mật khẩu"
         }
@@ -68,7 +69,8 @@
             "/login": {
                 "headline": "Đăng nhập",
                 "dont_have_account_guide": "Chưa có tài khoản?",
-                "create_new_account_guide": "Tạo tài khoản mới"
+                "create_new_account_guide": "Tạo tài khoản mới",
+                "email_or_username": "Email hoặc @Username"
             },
             "/register": {
                 "headline": "Đăng ký tài khoản",
@@ -76,8 +78,8 @@
             },
             "/forgot-password": {
                 "headline": "Đặt lại mật khẩu",
-                "guide": "Nhập địa chỉ email của bạn, chúng tôi sẽ gửi một tin nhắn nhằm khôi phục mật khẩu",
-                "submit_button": "Gửi tin nhắn đặt lại mật khẩu"
+                "guide": "Nhập địa chỉ email của bạn, chúng tôi sẽ gửi một tin nhắn hướng dẫn khôi phục mật khẩu",
+                "submit_button": "Gửi tin nhắn khôi phục mật khẩu"
             }
         }
     }
