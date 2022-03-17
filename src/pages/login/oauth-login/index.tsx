@@ -108,6 +108,24 @@ export default function OAuthLoginView() {
                 />
                 <span>Linkedin</span>
             </a>
+
+
+            {/* Tiktok */}
+            <a
+                href="#"
+                className={clsx(
+                    styles.oauthButton,
+                    "bg-gray-100 hover:bg-gray-200 dark:hover:bg-slate-900 dark:border-slate-700 dark:bg-slate-800 "
+                )}
+            >
+                <Image
+                    src="/oauth/tiktok.svg"
+                    alt=""
+                    width="30"
+                    height="30"
+                />
+                <span>Tiktok</span>
+            </a>
         </div>
     )
 }
