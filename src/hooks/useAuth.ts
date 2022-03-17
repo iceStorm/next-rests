@@ -1,3 +1,9 @@
 export default function useAuth() {
-    return ""
+    let accessToken: string|null = ""
+
+    if (typeof window !== "undefined") {
+        accessToken = localStorage.getItem("access_token")
+    }
+
+    return accessToken
 }

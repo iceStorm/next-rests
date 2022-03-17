@@ -1,10 +1,14 @@
 import { BeakerIcon } from "@heroicons/react/solid"
 import Head from "next/head"
 import Link from "next/link"
+import { useCallback, useState } from "react"
 import { useTranslation } from "react-i18next"
+import TheSwitch from "src/components/TheSwitch"
+import useShowPassword from "src/hooks/useShowPassword"
 
 export default function SignupPage() {
     const { t } = useTranslation()
+    const { showingPassword, handleShowingPassword } = useShowPassword()
 
     return (
         <div className="container">
@@ -41,8 +45,14 @@ export default function SignupPage() {
                     </label>
                     <input
                         id="password"
-                        type="password"
-                        className="mt-2 w-full"
+                        type={showingPassword ? "text" : "password"}
+                        className="mt-2 mb-5 w-full"
+                    />
+
+                    <TheSwitch
+                        title={t("common:auth.show_password")}
+                        checked={showingPassword}
+                        onChange={handleShowingPassword}
                     />
                 </div>
 

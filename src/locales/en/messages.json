@@ -22,7 +22,9 @@
             "signup": "Signup",
             "username": "Username",
             "password": "Password",
-            "forgot_password": "Forgot password"
+            "forgot_password": "Forgot password",
+            "show_password": "Show password",
+            "using_oauth": "Or authenticate via social apps"
         }
     },
 

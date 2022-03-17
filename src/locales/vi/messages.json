@@ -22,7 +22,9 @@
             "signup": "Đăng ký",
             "username": "Tên người dùng (username)",
             "password": "Mật khẩu",
-            "forgot_password": "Quên mật khẩu"
+            "forgot_password": "Quên mật khẩu",
+            "show_password": "Hiện mật khẩu",
+            "using_oauth": "Hoặc đăng nhập thông qua các ứng dụng"
         }
     },
 
@@ -70,7 +72,7 @@
                 "headline": "Đăng nhập",
                 "dont_have_account_guide": "Chưa có tài khoản?",
                 "create_new_account_guide": "Tạo tài khoản mới",
-                "email_or_username": "Email hoặc @Username"
+                "email_or_username": "Email hoặc Tên người dùng (username)"
             },
             "/register": {
                 "headline": "Đăng ký tài khoản",

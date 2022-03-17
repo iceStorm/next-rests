@@ -1,0 +1,10 @@
+.oauthButton {
+    @apply py-2 px-3 rounded;
+    @apply flex items-center gap-3;
+}
+
+.oauthGrid {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+}
