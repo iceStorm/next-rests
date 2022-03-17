@@ -69,8 +69,10 @@ export default function LoginPage() {
                             onChange={handleShowingPassword}
                         />
 
-                        <Link href="/forgot-password">
-                            {t("common:auth.forgot_password") + "?"}
+                        <Link href="/forgot-password" passHref>
+                            <span className="link">
+                                {t("common:auth.forgot_password")}?
+                            </span>
                         </Link>
                     </div>
 
@@ -83,9 +85,7 @@ export default function LoginPage() {
 
             {/* OAuth */}
             <section className="oauth-section max-w-md w-full lg:w-auto">
-                <p className="mb-5 font-semibold dark:text-white">
-                    {t("common:auth.using_oauth")}
-                </p>
+                <p className="mb-5 font-semibold dark:text-white">{t("common:auth.using_oauth")}</p>
                 <OAuthLoginView />
             </section>
         </div>
