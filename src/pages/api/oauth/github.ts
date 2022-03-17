@@ -25,5 +25,6 @@ export default async function handler(
     )
 
     // res.status(200).json({ code })
-    return res.status(200).json(oauthResult.data)
+    // return res.status(200).json(oauthResult.data)
+    return res.status(302).redirect('/')
 }

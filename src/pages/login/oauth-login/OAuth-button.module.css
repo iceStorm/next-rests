@@ -1,6 +1,7 @@
 .oauthButton {
     @apply py-2 px-3 rounded;
     @apply flex items-center gap-3;
+    @apply select-none border border-gray-200;
 }
 
 .oauthGrid {

@@ -9,7 +9,7 @@ export default function OAuthLoginView() {
             <a
                 className={clsx(
                     styles.oauthButton,
-                    "bg-gray-100 hover:bg-gray-200 dark:hover:bg-slate-900 border border-gray-200 dark:border-slate-700 dark:bg-slate-800 "
+                    "bg-gray-100 hover:bg-gray-200 dark:hover:bg-slate-900 dark:border-slate-700 dark:bg-slate-800 "
                 )}
                 href={`https://github.com/login/oauth/authorize?client_id=${process.env.NEXT_PUBLIC_GITHUB_OAUTH_CLIENT_ID}`}
             >
@@ -19,9 +19,10 @@ export default function OAuthLoginView() {
 
             {/* Google */}
             <a
+                href="#"
                 className={clsx(
                     styles.oauthButton,
-                    "bg-gray-100 hover:bg-gray-200 dark:hover:bg-slate-900 border border-gray-200 dark:border-slate-700 dark:bg-slate-800 "
+                    "bg-gray-100 hover:bg-gray-200 dark:hover:bg-slate-900 dark:border-slate-700 dark:bg-slate-800 "
                 )}
             >
                 <Image src="/oauth/google.svg" alt="" width="30" height="30" />
@@ -30,9 +31,10 @@ export default function OAuthLoginView() {
 
             {/* Twitter */}
             <a
+                href="#"
                 className={clsx(
                     styles.oauthButton,
-                    "bg-gray-100 hover:bg-gray-200 dark:hover:bg-slate-900 border border-gray-200 dark:border-slate-700 dark:bg-slate-800 "
+                    "bg-gray-100 hover:bg-gray-200 dark:hover:bg-slate-900 dark:border-slate-700 dark:bg-slate-800 "
                 )}
             >
                 <Image src="/oauth/twitter.svg" alt="" width="30" height="30" />
@@ -41,9 +43,10 @@ export default function OAuthLoginView() {
 
             {/* Facebook */}
             <a
+                href="#"
                 className={clsx(
                     styles.oauthButton,
-                    "bg-gray-100 hover:bg-gray-200 dark:hover:bg-slate-900 border border-gray-200 dark:border-slate-700 dark:bg-slate-800 "
+                    "bg-gray-100 hover:bg-gray-200 dark:hover:bg-slate-900 dark:border-slate-700 dark:bg-slate-800 "
                 )}
             >
                 <Image
@@ -57,9 +60,10 @@ export default function OAuthLoginView() {
 
             {/* Instagram */}
             <a
+                href="#"
                 className={clsx(
                     styles.oauthButton,
-                    "bg-gray-100 hover:bg-gray-200 dark:hover:bg-slate-900 border border-gray-200 dark:border-slate-700 dark:bg-slate-800 "
+                    "bg-gray-100 hover:bg-gray-200 dark:hover:bg-slate-900 dark:border-slate-700 dark:bg-slate-800 "
                 )}
             >
                 <Image
@@ -73,9 +77,10 @@ export default function OAuthLoginView() {
 
             {/* Microsoft */}
             <a
+                href="#"
                 className={clsx(
                     styles.oauthButton,
-                    "bg-gray-100 hover:bg-gray-200 dark:hover:bg-slate-900 border border-gray-200 dark:border-slate-700 dark:bg-slate-800 "
+                    "bg-gray-100 hover:bg-gray-200 dark:hover:bg-slate-900 dark:border-slate-700 dark:bg-slate-800 "
                 )}
             >
                 <Image
@@ -89,9 +94,10 @@ export default function OAuthLoginView() {
 
             {/* Linkedin */}
             <a
+                href="#"
                 className={clsx(
                     styles.oauthButton,
-                    "bg-gray-100 hover:bg-gray-200 dark:hover:bg-slate-900 border border-gray-200 dark:border-slate-700 dark:bg-slate-800 "
+                    "bg-gray-100 hover:bg-gray-200 dark:hover:bg-slate-900 dark:border-slate-700 dark:bg-slate-800 "
                 )}
             >
                 <Image
